@@ -9,6 +9,7 @@ $serverData = [
     'SERVER_NAME' => _filter($_SERVER['SERVER_NAME']),                                                                                                                      // Ім'я сервера
     'SCHEME' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http',                                                                                  // Схема (http/https)
     'FULL_URL' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . _filter($_SERVER['HTTP_HOST']) . _filter($_SERVER['PHP_SELF']),     // Повний URL, включаючи схему, домен та шлях
+    'REFERER' => _filter($_SERVER['HTTP_REFERER'] ?? '')                                                                                                               // Реферер
 ];
 
 # Визначаємо константи з масиву
