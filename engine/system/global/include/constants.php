@@ -22,6 +22,8 @@ $serverData = [
     'HTTP_REFERER' => isset($_SERVER['HTTP_REFERER']) ? _filter($_SERVER['HTTP_REFERER']) : 'none',
     # Браузер пользователя
     'BROWSER' => isset($_SERVER['HTTP_USER_AGENT']) ? _filter($_SERVER["HTTP_USER_AGENT"]) : 'none',
+    # IP пользователя
+    'IP' => _filter(filter_var($_SERVER["REMOTE_ADDR"], FILTER_VALIDATE_IP)),
 ];
 
 # Визначаємо константи з масиву
