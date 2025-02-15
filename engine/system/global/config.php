@@ -1,19 +1,8 @@
 <?php
 
-# Встановлення імені сесії
-session_name('SID');
+require_once(ENGINE_DIR . '/system/global/include/session.php');        // Встановлення сесії
+require_once(ENGINE_DIR . '/system/global/include/redefinition.php');   // Константи та псевдо змінних та функцій
 
-# Перевірка успішного запуску сесії
-if (!session_start()) { 
-    die('Помилка під час запуску сесії');
-}
 
-# Отримання і захист ідентифікатора сесії
-$sessID = addslashes(session_id());
 
-# Безпечне створення нового ідентифікатора сесії
-if (!preg_match('/^[a-fA-F0-9]{32}$/', $sessID)) { 
-    $sessID = bin2hex(random_bytes(16));
-}
 
-# Константи та псевдо функції для скорочення змінних та функцій
