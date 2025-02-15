@@ -20,6 +20,8 @@ $serverData = [
     'REFERER' => _filter($_SERVER['HTTP_REFERER'] ?? 'none'),
     # Откуда пришли
     'HTTP_REFERER' => isset($_SERVER['HTTP_REFERER']) ? _filter($_SERVER['HTTP_REFERER']) : 'none',
+    # Браузер пользователя
+    'BROWSER' => isset($_SERVER['HTTP_USER_AGENT']) ? _filter($_SERVER["HTTP_USER_AGENT"]) : 'none',
 ];
 
 # Визначаємо константи з масиву
