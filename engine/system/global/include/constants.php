@@ -7,6 +7,7 @@ $serverData = [
     'PHP_SELF' => _filter($_SERVER['PHP_SELF']),                                                                                                                            // Ім'я файлу, до якого виконується звернення
     'HTTP_HOST' => _filter($_SERVER['HTTP_HOST']),                                                                                                                          // Домен сайту
     'SERVER_NAME' => _filter($_SERVER['SERVER_NAME']),                                                                                                                      // Ім'я сервера
+    'SCHEME' => isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http',                                                                                  // Схема (http/https)
 ];
 
 # Визначаємо константи з масиву
