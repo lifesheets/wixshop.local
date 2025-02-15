@@ -29,6 +29,12 @@ function remove_script(?string $string = null): string {
  */
 
 function _filter(string $data): string {
+    # Перевіряємо, що строка не порожня
+    if ($data === null || $data === '') {
+        return '';
+    }
+    # Використовуємо htmlspecialchars для екранування спеціальних символів
     return remove_script(addslashes(htmlspecialchars($data, ENT_QUOTES, 'UTF-8')));
 }
 
+require_once(ENGINE_DIR . '/system/global/include/constants.php');
