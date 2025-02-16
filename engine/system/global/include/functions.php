@@ -18,3 +18,14 @@ function cookie($name) {
     return isset($_COOKIE[$name]) ? remove_script($_COOKIE[$name]) : null;
 }
 
+# Функція для роботи з параметрами SESSION
+function session($data, $param = 'no_data') {
+    # Якщо параметр не переданий, повертаємо значення сесії або встановлюємо нове значення
+    if ($param == 'no_data') {
+        return isset($_SESSION[$data]) ? (!is_array($_SESSION[$data]) ? remove_script($_SESSION[$data]) : $_SESSION[$data]) : null;
+    } else {
+        # Якщо параметр переданий, оновлюємо значення в сесії
+        return $_SESSION[$data] = $param;
+    }
+}
+
