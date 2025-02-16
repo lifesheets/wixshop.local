@@ -1,14 +1,18 @@
 <?php
 
-# Встановлення сесії
-require_once(ENGINE_DIR . '/system/global/include/session.php');
-# Константи та псевдо змінних та функцій
-require_once(ENGINE_DIR . '/system/global/include/redefinition.php');
-# Підключення конфігураційного файлу сайту
-require_once(ENGINE_DIR . '/system/global/include/config.php');
-# Помилки інтерпретатора
-require_once(ENGINE_DIR . '/system/global/include/interpretator.php');
-# Інсталятор cms движка
-require_once(ENGINE_DIR . '/system/global/include/install.php');
-# Проста капча від ботів
-require_once(ENGINE_DIR . '/system/global/include/captcha.php');
+# Шлях до файлу конфігурації
+$configFilePath = ENGINE_DIR . "/configs/settings.ini";
+
+# Спробуємо прочитати INI файл з обробкою помилок
+$config = @parse_ini_file($configFilePath, false);
+
+# Перевірка на успішність читання файлу
+if ($config === false) {
+    # Повертаємо порожній масив, якщо сталася помилка
+    $config = [];
+}
+
+# Додаткова перевірка, якщо файл прочитано, але порожній
+if (empty($config)) {
+    error_log("Конфігураційний файл порожній: " . $configFilePath);
+}

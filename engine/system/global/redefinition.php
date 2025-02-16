@@ -36,7 +36,7 @@ function _filter(string $data): string {
 }
 
 # Масиви для збереження значень
-require_once(ENGINE_DIR . '/system/global/include/constants.php');
+require_once(ENGINE_DIR . '/system/global/constants.php');
 
 # Функція для роботи
-require_once(ENGINE_DIR . '/system/global/include/functions.php');
+require_once(ENGINE_DIR . '/system/global/functions.php');
