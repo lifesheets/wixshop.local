@@ -29,3 +29,10 @@ function session($data, $param = 'no_data') {
     }
 }
 
+# Функція для налаштувань конфігурацій
+function config($data, $param = null) {
+    global $config;
+    # Якщо параметр не переданий, повертаємо значення конфігурації після фільтрації
+    return $param === null ? _filter($config[$data]) : ($config[$data] = $param);
+}
+
