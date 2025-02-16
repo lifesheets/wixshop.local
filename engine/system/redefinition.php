@@ -34,9 +34,3 @@ function _filter(string $data): string {
     # Використовуємо htmlspecialchars для екранування спеціальних символів
     return remove_script(addslashes(htmlspecialchars($data, ENT_QUOTES, 'UTF-8')));
 }
-
-# Масиви для збереження значень
-require_once(ENGINE_DIR . '/system/global/constants.php');
-
-# Функція для роботи
-require_once(ENGINE_DIR . '/system/global/functions.php');

@@ -1,11 +1,11 @@
 <?php
 
 # Увімкнення показу помилок залежно від конфігурації
-if (config('app_debug') === true) {
+if (config('app_debug')) {
     # Включаємо відображення всіх помилок
-    ini_set('error_reporting', E_ALL);                      # Показуємо всі помилки
     ini_set('display_errors', 1);                           # Увімкнено відображення помилок
     ini_set('display_startup_errors', 1);                   # Увімкнено відображення помилок при запуску PHP
+    ini_set('error_reporting', E_ALL);                      # Показуємо всі помилки
 } else {
     # Вимикаємо відображення помилок
     ini_set('display_errors', 0);                           # Вимикаємо відображення помилок
