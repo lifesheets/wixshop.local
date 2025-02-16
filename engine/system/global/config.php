@@ -8,9 +8,7 @@ require_once(ENGINE_DIR . '/system/global/include/redefinition.php');
 require_once(ENGINE_DIR . '/system/global/include/config.php');
 # Помилки інтерпретатора
 require_once(ENGINE_DIR . '/system/global/include/interpretator.php');
-# Підключення до бази даних
-
 # Інсталятор cms движка
 require_once(ENGINE_DIR . '/system/global/include/install.php');
-
-# Зовсім проста капча
+# Проста капча від ботів
+require_once(ENGINE_DIR . '/system/global/include/captcha.php');
