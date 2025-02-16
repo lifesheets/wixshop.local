@@ -57,3 +57,11 @@ function type_version(): bool {
     return false;
 }
 
+# Функція для редіректу
+function redirect($url, $refresh = 0) {
+    /*
+     * $url - URL для перенаправлення
+     * $refresh - Затримка перед перенаправленням (за замовчуванням 0)
+     */
+    return $refresh <= 0 ? header('Location: ' . $url) . exit() : header('Refresh: ' . $refresh . '; url=' . $url) . exit();
+}
