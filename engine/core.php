@@ -20,3 +20,5 @@ require_once(ENGINE_DIR . '/system/captcha.php');
 require_once(ENGINE_DIR . '/system/functions.php');
 # Автозавантаження класів з папки /engine/classes/
 require_once(ENGINE_DIR . '/system/classes.php');
+# Актуальна версія сайту (Wap/Web)
+# require_once(ENGINE_DIR . '/system/themes.php');

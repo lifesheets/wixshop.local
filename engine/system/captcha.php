@@ -1,7 +1,7 @@
 <?php
 
 # Довжина CAPTCHA та значення для генерації випадкових чисел
-$captha_length = 5;                     // Визначаємо довжину CAPTCHA
+$captcha_length = 6;                    // Визначаємо довжину CAPTCHA
 $captcha_random_seed = "152639487";     // Значення для генерації випадкових чисел
 # Перевіряємо, чи є запит на зображення CAPTCHA
 if (isset($_REQUEST['image'])) {

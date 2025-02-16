@@ -1,0 +1,54 @@
+/* Стиль для поля введення капчі */
+.system_captcha_class_input {
+    border: 2px solid #cdcdcd;
+    height: 40px;
+    outline: none;
+    line-height: 40px;
+    display: inline-block;
+    border-radius: 20px 0 0 20px;
+    width: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s ease-in-out;
+}
+
+.system_captcha_class_input:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+/* Стиль для блоку із зображенням капчі */
+.system_captcha_class_block {
+    border: 2px solid #cdcdcd;
+    background-color: #f3f3f3;
+    height: 36px;
+    line-height: 40px;
+    display: inline-block;
+    border-radius: 0 20px 20px 0;
+    width: 120px;
+    text-align: center;
+    position: relative;
+    left: -5px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%);
+    transition: background-color 0.3s;
+}
+
+.system_captcha_class_block:hover {
+    background-color: #e0e0e0;
+}
+
+.system_captcha_class_block img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}

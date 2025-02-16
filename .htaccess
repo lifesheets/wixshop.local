@@ -6,7 +6,6 @@
 <IfModule mod_rewrite.c>
   # Включаємо механізм перезапису URL
   RewriteEngine On
-
   # Перевіряємо, чи не є запит директорією
   RewriteCond %{REQUEST_FILENAME} !-d
   # Перевіряємо, чи не є запит файлом
@@ -14,11 +13,14 @@
 </IfModule>
 
 <IfModule php_value>
-  # Встановлюємо конфігурації PHP
-  php_value register_globals 0              # Вимикаємо реєстрацію глобальних змінних
-  php_value magic_quotes_gpc 0              # Вимикаємо автоматичну обробку символів-апострофів
-  php_value session.use_trans_sid 1         # Вмикаємо передачу SID в URL для сесій
-  php_value session.cookie_lifetime 0       # Встановлюємо безстроковий термін життя cookie для сесій
+ # Вимикаємо реєстрацію глобальних змінних
+  php_value register_globals 0
+  # Вимикаємо автоматичну обробку символів-апострофів
+  php_value magic_quotes_gpc 0
+  # Вмикаємо передачу SID в URL для сесій
+  php_value session.use_trans_sid 1
+  # Встановлюємо безстроковий термін життя cookie для сесій
+  php_value session.cookie_lifetime 0
 </IfModule>
 
 # Встановлюємо кодування за замовчуванням UTF-8
