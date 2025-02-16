@@ -36,3 +36,24 @@ function config($data, $param = null) {
     return $param === null ? _filter($config[$data]) : ($config[$data] = $param);
 }
 
+# Функція для визначення версії сайту (мобільний/десктоп)
+function type_version(): bool {
+    # Массив популярних мобільних пристроїв та браузерів
+    $mobile_array = array(
+        'ipad', 'iphone', 'android', 'pocket', 'palm', 'windows ce', 'windowsce', 'cellphone', 'opera mobi',
+        'ipod', 'small', 'sharp', 'sonyericsson', 'symbian', 'opera mini', 'nokia', 'htc_', 'samsung', 'motorola',
+        'smartphone', 'blackberry', 'playstation portable', 'tablet browser'
+    );
+    # Отримуємо інформацію про браузер користувача
+    $agent = strtolower(BROWSER);
+    # Перевіряємо, чи є згадка про мобільний пристрій в рядку агента
+    foreach ($mobile_array as $value) {
+        if (strpos($agent, $value) !== false) {
+            # Якщо є, повертаємо true
+            return true;
+        }
+    }
+    # Якщо не знайдено - повертаємо false
+    return false;
+}
+
