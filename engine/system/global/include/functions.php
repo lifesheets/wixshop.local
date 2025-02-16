@@ -12,3 +12,9 @@ function post($data, $d = 0) {
     return isset($_POST[$data]) ? ($d == 0 ? remove_script($_POST[$data]) : $_POST[$data]) : null;
 }
 
+# Функція для роботи з параметрами COOKIE
+function cookie($name) {
+    # Перевіряємо, чи існує cookie з заданим ім'ям
+    return isset($_COOKIE[$name]) ? remove_script($_COOKIE[$name]) : null;
+}
+
