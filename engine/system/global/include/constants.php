@@ -32,4 +32,3 @@ $serverData = [
 foreach ($serverData as $key => $value) {
     define($key, $value);
 }
-

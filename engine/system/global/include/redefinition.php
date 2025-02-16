@@ -16,10 +16,8 @@ function remove_script(?string $string = null): string {
     # Небезпечні теги та події, які можуть містити шкідливий код
     $dangerous_tags = ['vbscript', 'expression', 'applet', 'xml', 'blink', 'embed', 'object', 'frameset', 'ilayer', 'layer', 'bgsound'];
     $dangerous_events = ['onabort', 'onactivate', 'onafterprint', 'onafterupdate', 'onbeforeactivate', 'onbeforecopy', 'onbeforecut', 'onbeforedeactivate', 'onbeforeeditfocus', 'onbeforepaste', 'onbeforeprint', 'onbeforeunload', 'onbeforeupdate', 'onblur', 'onbounce', 'oncellchange', 'onchange', 'oncontextmenu', 'oncontrolselect', 'oncopy', 'oncut', 'ondataavailable', 'ondatasetchanged', 'ondatasetcomplete', 'ondblclick', 'ondeactivate', 'ondrag', 'ondragend', 'ondragenter', 'ondragleave', 'ondragover', 'ondragstart', 'ondrop', 'onerror', 'onerrorupdate', 'onfilterchange', 'onfinish', 'onfocus', 'onfocusin', 'onfocusout', 'onhelp', 'onkeydown', 'onkeypress', 'onkeyup', 'onlayoutcomplete', 'onload', 'onlosecapture', 'onmousedown', 'onmouseenter', 'onmouseleave', 'onmousemove', 'onmouseout', 'onmouseover', 'onmouseup', 'onmousewheel', 'onmove', 'onmoveend', 'onmovestart', 'onpaste', 'onpropertychange', 'onreadystatechange', 'onreset', 'onresize', 'onresizeend', 'onresizestart', 'onrowenter', 'onrowexit', 'onrowsdelete', 'onrowsinserted', 'onscroll', 'onselect', 'onselectionchange', 'onselectstart', 'onstart', 'onstop', 'onsubmit', 'onunload'];
-    # Видаляємо всі знайдені небезпечні теги та обробники подій
-    $string = str_ireplace(array_merge($dangerous_tags, $dangerous_events), '', $string);
     # Повертаємо очищений рядок без небезпечних елементів
-    return $string;
+    return str_ireplace(array_merge($dangerous_tags, $dangerous_events), '', $string);
 }
 
 /**
@@ -30,7 +28,7 @@ function remove_script(?string $string = null): string {
 
 function _filter(string $data): string {
     # Перевіряємо, що строка не порожня
-    if ($data === null || $data === '') {
+    if ($data === '') {
         return '';
     }
     # Використовуємо htmlspecialchars для екранування спеціальних символів
@@ -38,3 +36,4 @@ function _filter(string $data): string {
 }
 
 require_once(ENGINE_DIR . '/system/global/include/constants.php');
+require_once(ENGINE_DIR . '/system/global/include/functions.php');
