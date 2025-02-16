@@ -32,22 +32,22 @@ class template {
     }
 
     # Створює елемент вибору (select)
-    public static function select(){}
+    public static function select() {}
 
     # Створює елемент для вибору множинних варіантів (checkbox)
-    static function checkbox(){}
+    static function checkbox() {}
 
     # Створює елемент для вибору одного варіанту (radio)
-    static function radio(){}
+    static function radio() {}
 
     # Встановлює заголовок сторінки
-    static function title(){}
+    static function title() {}
 
     # Встановлює опис сторінки
-    static function description(){}
+    static function description() {}
 
     # Встановлює ключові слова для сторінки
-    static function keywords(){}
+    static function keywords() {}
 
     # Функція для обробки порожніх значень або помилок
     public static function empty() {}
